@@ -41,12 +41,10 @@ No requiere dependencias de npm.
 
 ## Instalación desde GitHub
 
-Reemplaza `<OWNER>` por el propietario del repositorio una vez publicado.
-
 ### Codex
 
 ```bash
-git clone https://github.com/<OWNER>/multi-brand-video-studio.git ~/.codex/skills/multi-brand-video-studio
+git clone https://github.com/alexsuarex/alexsuarex-multi-brand-video-studio.git ~/.codex/skills/multi-brand-video-studio
 ```
 
 También puede cargarse como directorio o ZIP mediante la API de Skills de OpenAI; consulta la [referencia oficial](https://developers.openai.com/api/reference/python/resources/skills/methods/create).
@@ -54,7 +52,7 @@ También puede cargarse como directorio o ZIP mediante la API de Skills de OpenA
 ### Claude Code y Claude.ai
 
 ```bash
-git clone https://github.com/<OWNER>/multi-brand-video-studio.git ~/.claude/skills/multi-brand-video-studio
+git clone https://github.com/alexsuarex/alexsuarex-multi-brand-video-studio.git ~/.claude/skills/multi-brand-video-studio
 ```
 
 Claude.ai admite la carga de una skill empaquetada como ZIP. Consulta la [documentación oficial de Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview).
@@ -62,7 +60,7 @@ Claude.ai admite la carga de una skill empaquetada como ZIP. Consulta la [docume
 ### Gemini CLI
 
 ```bash
-gemini skills install https://github.com/<OWNER>/multi-brand-video-studio
+gemini skills install https://github.com/alexsuarex/alexsuarex-multi-brand-video-studio
 ```
 
 Gemini también descubre skills en `~/.gemini/skills/`, `~/.agents/skills/`, `.gemini/skills/` o `.agents/skills/`. Consulta la [documentación oficial de Gemini CLI](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/using-agent-skills.md).
@@ -106,4 +104,3 @@ Los cambios deben conservar compatibilidad con Node.js 18+ y no introducir depen
 ## Estado
 
 Versión inicial `0.1.0`. No se incluye licencia hasta que el propietario decida si el repositorio será público, privado o de uso interno.
-
