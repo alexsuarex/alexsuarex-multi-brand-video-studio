@@ -1,0 +1,9 @@
+{
+  "name": "multi-brand-video-studio",
+  "description": "Plan and produce multi-brand short-form video campaigns with portable avatar, camera, B-roll and local editing workflows.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Alejandro Suarez"
+  },
+  "keywords": ["video", "advertising", "avatar", "multi-brand"]
+}

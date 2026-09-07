@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/multi-brand-video-studio/avatar-profile.schema.json",
+  "title": "Avatar Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "avatarId",
+    "displayName",
+    "mode",
+    "identity",
+    "provider",
+    "authorization",
+    "voice",
+    "continuity",
+    "direction"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "avatarId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "displayName": { "type": "string", "minLength": 1 },
+    "mode": {
+      "enum": ["owned", "licensed-library", "new-consented", "generated-fictional", "none"]
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "adultConfirmed"],
+      "properties": {
+        "type": { "enum": ["real", "licensed", "fictional", "none"] },
+        "adultConfirmed": { "type": ["boolean", "null"] },
+        "identityReferencePrivate": { "type": ["string", "null"] }
+      }
+    },
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "avatarRefEnv"],
+      "properties": {
+        "name": { "type": ["string", "null"] },
+        "avatarRefEnv": { "type": ["string", "null"], "pattern": "^[A-Z][A-Z0-9_]*$" },
+        "catalogLicenseRef": { "type": ["string", "null"] }
+      }
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "allowedBrands", "allowedChannels", "voiceAllowed", "expiresAt"],
+      "properties": {
+        "status": { "enum": ["verified", "pending", "denied", "not-applicable"] },
+        "consentRecordPrivateRef": { "type": ["string", "null"] },
+        "allowedBrands": { "type": "array", "items": { "type": "string" } },
+        "allowedChannels": { "type": "array", "items": { "type": "string" } },
+        "voiceAllowed": { "type": "boolean" },
+        "expiresAt": { "type": ["string", "null"], "format": "date" }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "voiceRefEnv", "language", "accent", "pace"],
+      "properties": {
+        "source": {
+          "enum": ["avatar-default", "cloned-consented", "licensed", "synthetic", "uploaded-audio", "none"]
+        },
+        "voiceRefEnv": { "type": ["string", "null"], "pattern": "^[A-Z][A-Z0-9_]*$" },
+        "language": { "type": ["string", "null"] },
+        "accent": { "type": ["string", "null"] },
+        "pace": { "type": ["string", "null"] }
+      }
+    },
+    "continuity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["referencePaths", "appearance", "wardrobe", "setting", "lighting"],
+      "properties": {
+        "referencePaths": { "type": "array", "items": { "type": "string" } },
+        "appearance": { "type": "string" },
+        "wardrobe": { "type": "string" },
+        "setting": { "type": "string" },
+        "lighting": { "type": "string" }
+      }
+    },
+    "direction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["defaultFraming", "allowedGestures", "forbiddenGestures"],
+      "properties": {
+        "defaultFraming": { "type": "string" },
+        "allowedGestures": { "type": "array", "items": { "type": "string" } },
+        "forbiddenGestures": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}
+

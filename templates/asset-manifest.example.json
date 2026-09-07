@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "projectId": "example-service-campaign",
+  "assets": [
+    {
+      "assetId": "voice-master",
+      "path": "assets/processed/voice_master.wav",
+      "kind": "audio",
+      "origin": "generated",
+      "rightsStatus": "verified",
+      "provider": "configured-at-runtime",
+      "modelVersion": null,
+      "promptRef": "script.md",
+      "checksum": null,
+      "status": "planned",
+      "notes": "Create once, then use as the timing source of truth."
+    }
+  ]
+}
+

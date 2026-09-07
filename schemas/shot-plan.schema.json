@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/multi-brand-video-studio/shot-plan.schema.json",
+  "title": "Shot Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "projectId", "totalDurationSec", "shots"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "projectId": { "type": "string" },
+    "totalDurationSec": { "type": "number", "exclusiveMinimum": 0 },
+    "shots": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/shot" }
+    }
+  },
+  "$defs": {
+    "shot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "role",
+        "purpose",
+        "startSec",
+        "endSec",
+        "source",
+        "visual",
+        "direction",
+        "audio",
+        "overlays",
+        "transitionOut"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^S[0-9]{2,3}$" },
+        "role": { "enum": ["aroll", "broll", "interface", "still", "motion", "cta"] },
+        "purpose": { "type": "string", "minLength": 1 },
+        "startSec": { "type": "number", "minimum": 0 },
+        "endSec": { "type": "number", "exclusiveMinimum": 0 },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "provider", "path", "promptId", "rightsStatus"],
+          "properties": {
+            "type": { "enum": ["existing-video", "existing-image", "avatar", "generated-video", "generated-image", "ui-capture", "local-composition"] },
+            "provider": { "type": ["string", "null"] },
+            "path": { "type": ["string", "null"] },
+            "promptId": { "type": ["string", "null"] },
+            "rightsStatus": { "enum": ["verified", "pending", "not-applicable"] }
+          }
+        },
+        "visual": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["description", "shotSize", "composition", "continuityRef"],
+          "properties": {
+            "description": { "type": "string" },
+            "shotSize": { "type": "string" },
+            "composition": { "type": "string" },
+            "continuityRef": { "type": ["string", "null"] }
+          }
+        },
+        "direction": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["camera", "performance", "noTalking"],
+          "properties": {
+            "camera": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["move", "implementation"],
+              "properties": {
+                "move": { "type": "string" },
+                "implementation": { "enum": ["native", "digital-reframe", "none"] }
+              }
+            },
+            "performance": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["intention", "action", "expression", "gaze"],
+              "properties": {
+                "intention": { "type": ["string", "null"] },
+                "action": { "type": ["string", "null"] },
+                "expression": { "type": ["string", "null"] },
+                "gaze": { "type": ["string", "null"] }
+              }
+            },
+            "noTalking": { "type": "boolean" }
+          }
+        },
+        "audio": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "source", "dialogue", "coveredWords"],
+          "properties": {
+            "mode": { "enum": ["dialogue", "voiceover", "music", "ambient", "silent"] },
+            "source": { "type": ["string", "null"] },
+            "dialogue": { "type": ["string", "null"] },
+            "coveredWords": { "type": ["string", "null"] }
+          }
+        },
+        "overlays": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["caption", "text", "cta"],
+          "properties": {
+            "caption": { "type": "boolean" },
+            "text": { "type": ["string", "null"] },
+            "cta": { "type": ["string", "null"] }
+          }
+        },
+        "transitionOut": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "role": { "const": "broll" } }, "required": ["role"] },
+          "then": {
+            "properties": {
+              "direction": { "properties": { "noTalking": { "const": true } } },
+              "audio": { "properties": { "mode": { "enum": ["voiceover", "music", "ambient", "silent"] } } }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "role": { "const": "aroll" } }, "required": ["role"] },
+          "then": {
+            "properties": {
+              "audio": { "properties": { "mode": { "const": "dialogue" } } }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+

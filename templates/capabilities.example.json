@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0",
+  "verifiedAt": "2026-09-07T21:00:00Z",
+  "capabilities": [
+    {
+      "capability": "strategy.adAngles",
+      "implementation": "internal-fallback",
+      "kind": "local",
+      "status": "available",
+      "constraints": [
+        "No external market claims without sources"
+      ],
+      "source": "references/creative-modules.md"
+    },
+    {
+      "capability": "avatar.talkingPresenter",
+      "implementation": "configured-at-runtime",
+      "kind": "provider",
+      "status": "unknown",
+      "constraints": [
+        "Verify lip-sync, gesture and audio-input support before production"
+      ],
+      "source": null
+    },
+    {
+      "capability": "composition.localTimeline",
+      "implementation": "hyperframes-or-equivalent",
+      "kind": "local",
+      "status": "available",
+      "constraints": [],
+      "source": "references/provider-routing.md"
+    }
+  ]
+}
+

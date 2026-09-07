@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "avatarId": "example-fictional-presenter",
+  "displayName": "Example Fictional Presenter",
+  "mode": "generated-fictional",
+  "identity": {
+    "type": "fictional",
+    "adultConfirmed": true,
+    "identityReferencePrivate": null
+  },
+  "provider": {
+    "name": "configured-at-runtime",
+    "avatarRefEnv": "VIDEO_AVATAR_ID",
+    "catalogLicenseRef": null
+  },
+  "authorization": {
+    "status": "not-applicable",
+    "consentRecordPrivateRef": null,
+    "allowedBrands": [
+      "example-service-brand"
+    ],
+    "allowedChannels": [
+      "instagram-reels",
+      "facebook-reels"
+    ],
+    "voiceAllowed": true,
+    "expiresAt": null
+  },
+  "voice": {
+    "source": "synthetic",
+    "voiceRefEnv": "VIDEO_VOICE_ID",
+    "language": "es-MX",
+    "accent": "neutral Mexican Spanish",
+    "pace": "natural conversational"
+  },
+  "continuity": {
+    "referencePaths": [],
+    "appearance": "Consistent adult fictional presenter; define exact appearance before production.",
+    "wardrobe": "Single campaign-approved outfit.",
+    "setting": "Bright, credible service environment.",
+    "lighting": "Soft daylight with consistent direction."
+  },
+  "direction": {
+    "defaultFraming": "medium close-up, eye level",
+    "allowedGestures": [
+      "small open-hand emphasis",
+      "brief nod",
+      "subtle eyebrow raise"
+    ],
+    "forbiddenGestures": [
+      "repetitive hand waving",
+      "hands covering the face"
+    ],
+    "notes": "Use one gesture and one expression per talking clip."
+  }
+}
+

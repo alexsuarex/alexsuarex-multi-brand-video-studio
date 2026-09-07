@@ -1,0 +1,323 @@
+{
+  "schemaVersion": "1.0",
+  "projectId": "example-service-campaign",
+  "totalDurationSec": 30,
+  "shots": [
+    {
+      "id": "S01",
+      "role": "aroll",
+      "purpose": "Hook with a specific problem",
+      "startSec": 0,
+      "endSec": 3,
+      "source": {
+        "type": "avatar",
+        "provider": "configured-at-runtime",
+        "path": null,
+        "promptId": "P-S01-A",
+        "rightsStatus": "not-applicable"
+      },
+      "visual": {
+        "description": "Presenter opens with direct eye contact.",
+        "shotSize": "close-up",
+        "composition": "Centered, mobile-safe headroom.",
+        "continuityRef": "example-fictional-presenter"
+      },
+      "direction": {
+        "camera": {
+          "move": "fast-opening-push",
+          "implementation": "digital-reframe"
+        },
+        "performance": {
+          "intention": "recognition",
+          "action": "brief eyebrow raise",
+          "expression": "concerned then confident",
+          "gaze": "camera"
+        },
+        "noTalking": false
+      },
+      "audio": {
+        "mode": "dialogue",
+        "source": "voice_master",
+        "dialogue": "¿Te pasa esto todos los días?",
+        "coveredWords": null
+      },
+      "overlays": {
+        "caption": true,
+        "text": "El problema diario",
+        "cta": null
+      },
+      "transitionOut": "hard cut on beat"
+    },
+    {
+      "id": "S02",
+      "role": "interface",
+      "purpose": "Show the friction clearly",
+      "startSec": 3,
+      "endSec": 7,
+      "source": {
+        "type": "ui-capture",
+        "provider": null,
+        "path": "assets/source/interface.png",
+        "promptId": null,
+        "rightsStatus": "verified"
+      },
+      "visual": {
+        "description": "Real interface detail with one highlighted friction point.",
+        "shotSize": "screen detail",
+        "composition": "Relevant control centered above captions.",
+        "continuityRef": null
+      },
+      "direction": {
+        "camera": {
+          "move": "slow-push-in",
+          "implementation": "digital-reframe"
+        },
+        "performance": {
+          "intention": null,
+          "action": null,
+          "expression": null,
+          "gaze": null
+        },
+        "noTalking": true
+      },
+      "audio": {
+        "mode": "voiceover",
+        "source": "voice_master",
+        "dialogue": null,
+        "coveredWords": "Describe the friction."
+      },
+      "overlays": {
+        "caption": true,
+        "text": null,
+        "cta": null
+      },
+      "transitionOut": "masked interface wipe"
+    },
+    {
+      "id": "S03",
+      "role": "broll",
+      "purpose": "Make the consequence tangible",
+      "startSec": 7,
+      "endSec": 11,
+      "source": {
+        "type": "generated-video",
+        "provider": "configured-at-runtime",
+        "path": null,
+        "promptId": "P-S03-B",
+        "rightsStatus": "not-applicable"
+      },
+      "visual": {
+        "description": "Same presenter silently experiences the problem in context.",
+        "shotSize": "medium shot",
+        "composition": "Subject on one third with environment visible.",
+        "continuityRef": "example-fictional-presenter"
+      },
+      "direction": {
+        "camera": {
+          "move": "subtle-handheld",
+          "implementation": "native"
+        },
+        "performance": {
+          "intention": "mild frustration",
+          "action": "looks at the task and exhales",
+          "expression": "natural concentration",
+          "gaze": "task, not camera"
+        },
+        "noTalking": true
+      },
+      "audio": {
+        "mode": "voiceover",
+        "source": "voice_master",
+        "dialogue": null,
+        "coveredWords": "Explain the consequence."
+      },
+      "overlays": {
+        "caption": true,
+        "text": null,
+        "cta": null
+      },
+      "transitionOut": "match cut"
+    },
+    {
+      "id": "S04",
+      "role": "aroll",
+      "purpose": "Explain the mechanism",
+      "startSec": 11,
+      "endSec": 16,
+      "source": {
+        "type": "avatar",
+        "provider": "configured-at-runtime",
+        "path": null,
+        "promptId": "P-S04-A",
+        "rightsStatus": "not-applicable"
+      },
+      "visual": {
+        "description": "Presenter explains one mechanism calmly.",
+        "shotSize": "medium close-up",
+        "composition": "Presenter offset to leave text space.",
+        "continuityRef": "example-fictional-presenter"
+      },
+      "direction": {
+        "camera": {
+          "move": "static-alive",
+          "implementation": "none"
+        },
+        "performance": {
+          "intention": "clarity",
+          "action": "small open-hand emphasis",
+          "expression": "confident and helpful",
+          "gaze": "camera"
+        },
+        "noTalking": false
+      },
+      "audio": {
+        "mode": "dialogue",
+        "source": "voice_master",
+        "dialogue": "La solución funciona porque simplifica el paso más importante.",
+        "coveredWords": null
+      },
+      "overlays": {
+        "caption": true,
+        "text": "Un mecanismo claro",
+        "cta": null
+      },
+      "transitionOut": "straight cut"
+    },
+    {
+      "id": "S05",
+      "role": "still",
+      "purpose": "Visualize proof without inventing data",
+      "startSec": 16,
+      "endSec": 21,
+      "source": {
+        "type": "generated-image",
+        "provider": "configured-at-runtime",
+        "path": null,
+        "promptId": "P-S05-I",
+        "rightsStatus": "not-applicable"
+      },
+      "visual": {
+        "description": "Approved service outcome represented without metrics or testimonial claims.",
+        "shotSize": "wide detail",
+        "composition": "Result visible with room for one label.",
+        "continuityRef": null
+      },
+      "direction": {
+        "camera": {
+          "move": "slow-push-in",
+          "implementation": "digital-reframe"
+        },
+        "performance": {
+          "intention": null,
+          "action": null,
+          "expression": null,
+          "gaze": null
+        },
+        "noTalking": true
+      },
+      "audio": {
+        "mode": "voiceover",
+        "source": "voice_master",
+        "dialogue": null,
+        "coveredWords": "State only approved proof."
+      },
+      "overlays": {
+        "caption": true,
+        "text": "Prueba verificable",
+        "cta": null
+      },
+      "transitionOut": "zoom-through"
+    },
+    {
+      "id": "S06",
+      "role": "aroll",
+      "purpose": "Deliver the key phrase",
+      "startSec": 21,
+      "endSec": 26,
+      "source": {
+        "type": "avatar",
+        "provider": "configured-at-runtime",
+        "path": null,
+        "promptId": "P-S06-A",
+        "rightsStatus": "not-applicable"
+      },
+      "visual": {
+        "description": "Presenter lands the key idea.",
+        "shotSize": "close-up",
+        "composition": "Eyes above center, captions below mouth.",
+        "continuityRef": "example-fictional-presenter"
+      },
+      "direction": {
+        "camera": {
+          "move": "slow-push-in",
+          "implementation": "digital-reframe"
+        },
+        "performance": {
+          "intention": "certainty",
+          "action": "brief nod after the phrase",
+          "expression": "warm confidence",
+          "gaze": "camera"
+        },
+        "noTalking": false
+      },
+      "audio": {
+        "mode": "dialogue",
+        "source": "voice_master",
+        "dialogue": "Menos fricción. Más tiempo para lo que sí importa.",
+        "coveredWords": null
+      },
+      "overlays": {
+        "caption": true,
+        "text": "Menos fricción",
+        "cta": null
+      },
+      "transitionOut": "cut on final word"
+    },
+    {
+      "id": "S07",
+      "role": "cta",
+      "purpose": "Present one clear next action",
+      "startSec": 26,
+      "endSec": 30,
+      "source": {
+        "type": "local-composition",
+        "provider": null,
+        "path": "composition/cta",
+        "promptId": null,
+        "rightsStatus": "not-applicable"
+      },
+      "visual": {
+        "description": "Brand-safe CTA panel over a clean background.",
+        "shotSize": "full frame graphic",
+        "composition": "One headline, one action, optional verified destination.",
+        "continuityRef": null
+      },
+      "direction": {
+        "camera": {
+          "move": "locked",
+          "implementation": "none"
+        },
+        "performance": {
+          "intention": null,
+          "action": null,
+          "expression": null,
+          "gaze": null
+        },
+        "noTalking": true
+      },
+      "audio": {
+        "mode": "voiceover",
+        "source": "voice_master",
+        "dialogue": null,
+        "coveredWords": "Conoce más."
+      },
+      "overlays": {
+        "caption": false,
+        "text": "Da el siguiente paso",
+        "cta": "Conoce más"
+      },
+      "transitionOut": "end hold"
+    }
+  ]
+}
+

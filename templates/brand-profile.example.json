@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0",
+  "brandId": "example-service-brand",
+  "displayName": "Example Service Brand",
+  "pageName": "Example Service Brand",
+  "status": "draft",
+  "messaging": {
+    "purpose": "Explain a useful service clearly and convert qualified viewers into conversations.",
+    "offers": [
+      "Primary service offer"
+    ],
+    "audiences": [
+      "Adults evaluating the service"
+    ],
+    "tone": [
+      "clear",
+      "helpful",
+      "credible"
+    ],
+    "languages": [
+      "es-MX"
+    ],
+    "taglines": []
+  },
+  "visual": {
+    "colors": {
+      "primary": "#16324F",
+      "secondary": "#F5F7FA",
+      "accent": "#2EC4B6",
+      "text": "#101820"
+    },
+    "fontFamilies": [
+      "Inter",
+      "Arial"
+    ],
+    "logoPaths": [],
+    "captionStyle": "Two short mobile-safe lines with one highlighted keyword.",
+    "ctaStyle": "High-contrast rounded panel with one action.",
+    "safeZoneNotes": "Keep essential text away from platform controls."
+  },
+  "channels": [
+    {
+      "name": "instagram-reels",
+      "formats": [
+        "9:16"
+      ]
+    },
+    {
+      "name": "facebook-reels",
+      "formats": [
+        "9:16",
+        "4:5"
+      ]
+    }
+  ],
+  "compliance": {
+    "allowedClaims": [],
+    "forbiddenClaims": [
+      "Unverified guarantees",
+      "Fabricated testimonials",
+      "Unverified prices or deadlines"
+    ],
+    "requiredDisclaimers": []
+  },
+  "defaultCta": {
+    "label": "Conoce más",
+    "action": "Start a qualified conversation",
+    "destinationRef": null
+  }
+}
+

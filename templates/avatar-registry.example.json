@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0",
+  "avatars": [
+    {
+      "avatarId": "owner-presenter",
+      "displayName": "Owner presenter",
+      "mode": "owned",
+      "status": "needs-private-profile"
+    },
+    {
+      "avatarId": "licensed-presenter",
+      "displayName": "Licensed catalog presenter",
+      "mode": "licensed-library",
+      "status": "needs-selection"
+    },
+    {
+      "avatarId": "campaign-character",
+      "displayName": "Fictional campaign character",
+      "mode": "generated-fictional",
+      "status": "needs-design"
+    },
+    {
+      "avatarId": "no-avatar",
+      "displayName": "No visible presenter",
+      "mode": "none",
+      "status": "ready"
+    }
+  ]
+}
+

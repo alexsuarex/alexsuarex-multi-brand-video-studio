@@ -1,0 +1,16 @@
+{
+  "name": "multi-brand-video-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Portable agent skill for multi-brand, multi-avatar short-form video production.",
+  "type": "module",
+  "scripts": {
+    "install:skill": "node scripts/install.mjs",
+    "validate": "node scripts/validate-bundle.mjs",
+    "validate:example": "node scripts/validate-project.mjs templates/project-brief.example.json templates/shot-plan.example.json",
+    "test": "npm run validate && npm run validate:example"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

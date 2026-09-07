@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0",
+  "projectId": "example-service-campaign",
+  "title": "Example Service Campaign",
+  "state": "draft",
+  "brandProfilePath": "brand-profile.example.json",
+  "avatarProfilePath": "avatar-profile.example.json",
+  "objective": {
+    "primary": "Generate qualified conversations",
+    "metric": "Qualified replies"
+  },
+  "offer": "A clear introduction to the primary service",
+  "audience": "Adults evaluating the service for the first time",
+  "platform": {
+    "channels": [
+      "instagram-reels",
+      "facebook-reels"
+    ],
+    "aspectRatio": "9:16",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "targetDurationSec": 30,
+  "language": "es-MX",
+  "cta": {
+    "label": "Conoce más",
+    "action": "Start a qualified conversation",
+    "destinationRef": null
+  },
+  "audioMaster": {
+    "mode": "tts",
+    "path": "assets/processed/voice_master.wav",
+    "wordTimingPath": "assets/processed/voice_master.words.json"
+  },
+  "creativeModules": [
+    {
+      "capability": "strategy.adAngles",
+      "implementation": null,
+      "required": false
+    },
+    {
+      "capability": "prompts.structuredImageVideo",
+      "implementation": null,
+      "required": false
+    },
+    {
+      "capability": "images.brandKit",
+      "implementation": null,
+      "required": false
+    }
+  ],
+  "sourceAssets": [],
+  "approvals": {
+    "brief": {
+      "status": "pending",
+      "by": null,
+      "at": null
+    },
+    "production": {
+      "status": "pending",
+      "by": null,
+      "at": null
+    },
+    "publication": {
+      "status": "pending",
+      "by": null,
+      "at": null
+    }
+  },
+  "output": {
+    "directory": "renders",
+    "basename": "example_service_campaign",
+    "version": 1
+  },
+  "assumptions": [
+    "Example data must be replaced before production."
+  ]
+}
+

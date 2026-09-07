@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/multi-brand-video-studio/project-brief.schema.json",
+  "title": "Video Campaign Project",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "projectId",
+    "title",
+    "state",
+    "brandProfilePath",
+    "avatarProfilePath",
+    "objective",
+    "offer",
+    "audience",
+    "platform",
+    "targetDurationSec",
+    "language",
+    "cta",
+    "audioMaster",
+    "creativeModules",
+    "sourceAssets",
+    "approvals",
+    "output"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "projectId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "title": { "type": "string", "minLength": 1 },
+    "state": {
+      "enum": ["draft", "brief-approved", "production-approved", "generating", "editing", "qa", "delivered", "blocked"]
+    },
+    "brandProfilePath": { "type": "string", "minLength": 1 },
+    "avatarProfilePath": { "type": "string", "minLength": 1 },
+    "objective": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary", "metric"],
+      "properties": {
+        "primary": { "type": "string", "minLength": 1 },
+        "metric": { "type": "string", "minLength": 1 }
+      }
+    },
+    "offer": { "type": "string", "minLength": 1 },
+    "audience": { "type": "string", "minLength": 1 },
+    "platform": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["channels", "aspectRatio", "width", "height", "fps"],
+      "properties": {
+        "channels": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "aspectRatio": { "enum": ["9:16", "1:1", "4:5", "16:9"] },
+        "width": { "type": "integer", "minimum": 320 },
+        "height": { "type": "integer", "minimum": 320 },
+        "fps": { "type": "number", "minimum": 20, "maximum": 120 }
+      }
+    },
+    "targetDurationSec": { "type": "number", "exclusiveMinimum": 0, "maximum": 600 },
+    "language": { "type": "string", "minLength": 2 },
+    "cta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "action", "destinationRef"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "action": { "type": "string", "minLength": 1 },
+        "destinationRef": { "type": ["string", "null"] }
+      }
+    },
+    "audioMaster": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "path", "wordTimingPath"],
+      "properties": {
+        "mode": { "enum": ["avatar-voice", "tts", "uploaded", "recorded", "none"] },
+        "path": { "type": ["string", "null"] },
+        "wordTimingPath": { "type": ["string", "null"] }
+      }
+    },
+    "creativeModules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["capability", "implementation", "required"],
+        "properties": {
+          "capability": { "type": "string" },
+          "implementation": { "type": ["string", "null"] },
+          "required": { "type": "boolean" }
+        }
+      }
+    },
+    "sourceAssets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "role", "rightsStatus"],
+        "properties": {
+          "path": { "type": "string" },
+          "role": { "type": "string" },
+          "rightsStatus": { "enum": ["verified", "pending", "not-applicable"] }
+        }
+      }
+    },
+    "approvals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["brief", "production", "publication"],
+      "properties": {
+        "brief": { "$ref": "#/$defs/approval" },
+        "production": { "$ref": "#/$defs/approval" },
+        "publication": { "$ref": "#/$defs/approval" }
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["directory", "basename", "version"],
+      "properties": {
+        "directory": { "type": "string" },
+        "basename": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" },
+        "version": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "assumptions": { "type": "array", "items": { "type": "string" } }
+  },
+  "$defs": {
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "by", "at"],
+      "properties": {
+        "status": { "enum": ["pending", "approved", "rejected", "not-required"] },
+        "by": { "type": ["string", "null"] },
+        "at": { "type": ["string", "null"], "format": "date-time" }
+      }
+    }
+  }
+}
+

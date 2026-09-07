@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "brands": [
+    {
+      "brandId": "alets-fidel-suarez",
+      "displayName": "Alets Fidel Suarez",
+      "status": "needs-profile",
+      "profilePath": null
+    },
+    {
+      "brandId": "mas-persianas-enrollables",
+      "displayName": "MAS Persianas y Enrollables",
+      "status": "needs-profile",
+      "profilePath": null
+    },
+    {
+      "brandId": "albatros-dev-ia",
+      "displayName": "Albatros Dev IA",
+      "status": "needs-profile",
+      "profilePath": null
+    },
+    {
+      "brandId": "handyman-pro",
+      "displayName": "Handyman PRO",
+      "status": "needs-profile",
+      "profilePath": null
+    },
+    {
+      "brandId": "la-paz-bay-rentals-real-estate",
+      "displayName": "La Paz Bay Rentals + Real Estate",
+      "status": "needs-profile",
+      "profilePath": null
+    }
+  ]
+}
+
