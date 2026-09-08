@@ -74,6 +74,8 @@ Entregar primero:
 
 El guion debe sonar conversacional. No leer literalmente todo el texto visual. Mantener cada segmento de avatar lo bastante corto para controlar actuación y continuidad.
 
+Para cada tema/tópico del guion, redactar primero la explicación hablada **completa** de ese tema como una sola narración continua (p. ej. todo lo que el avatar dice sobre "cómo funciona una bomba presurizadora" antes de pasar al siguiente tema). Solo después de tener esa narración completa, decidir qué fragmentos se cubren con B-roll y qué debe mostrar cada fragmento. No generar el B-roll primero y ajustar el guion después, y no tratar cada plano de B-roll como un beat mudo independiente — es una toma que se recorta bajo una narración que ya existe y no se detiene por el corte.
+
 ### 4. Convertir el guion en tomas
 
 Crear `shot-plan.json` conforme a `schemas/shot-plan.schema.json`. Cada toma debe tener función, tiempo, fuente, encuadre, cámara, acción, microgesto, audio, texto y transición.
@@ -106,6 +108,8 @@ Resolver una sola narración maestra antes del montaje final. La voz puede hered
 
 Normalizar, limpiar y medir el audio. Generar alineación de palabras o subtítulos con timecodes. No crear varias locuciones independientes para una misma frase salvo que el plan requiera voces distintas.
 
+El audio maestro debe cubrir el video desde el primer fotograma salvo que el cliente pida explícitamente un hook mudo al inicio. Un tramo inicial en silencio total (sin voz ni música) no es un "hook visual", se percibe como que el video no arrancó — si hay una toma silenciosa antes de la primera línea hablada, confirmar con el cliente que es intencional.
+
 ### 7. Generar A-roll, B-roll y recursos
 
 Para A-roll, conservar identidad, vestuario, luz, encuadre y dirección de mirada entre tomas relacionadas. Para B-roll usar `references/silent-broll.md` y marcar `noTalking: true`.
@@ -113,6 +117,12 @@ Para A-roll, conservar identidad, vestuario, luz, encuadre y dirección de mirad
 Generar primero previews o muestras baratas cuando exista incertidumbre alta. Reutilizar assets aprobados y registrar procedencia, licencia, prompt, proveedor y costo en el manifiesto.
 
 ### 8. Componer localmente
+
+Antes de construir un solo overlay de texto, aplicar `references/on-screen-text-design.md`:
+preguntar si existe un video/marca de referencia para el texto en pantalla, y si existe,
+descomponer su estructura capa por capa y confirmarla con el cliente antes de generar
+nada. No usar un banner centrado genérico como default silencioso — es una decisión de
+diseño débil, no una opción neutral.
 
 Construir textos, subtítulos, CTA, interfaces y motion graphics como capas editables. Si HyperFrames está disponible, usar su flujo y doctrinas; si no, usar HTML/CSS/GSAP, Remotion, un NLE o FFmpeg equivalente sin cambiar el contrato del proyecto.
 
@@ -150,6 +160,7 @@ Aplicar la lista de `references/quality-control.md`. Exportar:
 - Integración de módulos creativos: `references/creative-modules.md`
 - Cámara y actuación: `references/avatar-camera-and-gestures.md`
 - B-roll y prompts: `references/silent-broll.md`
+- Diseño de texto en pantalla: `references/on-screen-text-design.md`
 - Proveedores y fallbacks: `references/provider-routing.md`
 - Control de calidad: `references/quality-control.md`
 - Portabilidad entre agentes: `references/portability.md`
